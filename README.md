@@ -154,7 +154,7 @@ This week, an implementation feedback linearisation controller will be used.
      DLM manipulator control.
 
   #### Final-Challenges
-      Joint Control of a DLM using Feedback linearisation.
+  Joint Control of a DLM using Feedback linearisation.
   
   **Requirements:** 
     Requirements of Session 1.
