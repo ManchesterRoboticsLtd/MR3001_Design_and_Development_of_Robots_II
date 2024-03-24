@@ -1,36 +1,40 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ManchesterRoboticsLtd/MR3001B_Design_and_Development_of_Robots_I/blob/main/Misc/Logos/Logotipo%20Vertical%20Bco_Transparente.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/ManchesterRoboticsLtd/MR3001B_Design_and_Development_of_Robots_I/blob/main/Misc/Logos/Logotipo%20Vertical%20Azul%20transparente.png">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ManchesterRoboticsLtd/MR3001_Design_and_Development_of_Robots_II/blob/main/Misc/Logos/Logotipo%20Vertical%20Bco_Transparente.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/ManchesterRoboticsLtd/MR3001_Design_and_Development_of_Robots_II/blob/main/Misc/Logos/Logotipo%20Vertical%20Azul%20transparente.png">
   <img alt="Shows ITESM logo in black or white." width="160" align="right">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ManchesterRoboticsLtd/MR3001B_Design_and_Development_of_Robots_I/blob/main/Misc/Logos/MCR2_Logo_White.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/ManchesterRoboticsLtd/MR3001B_Design_and_Development_of_Robots_I/blob/main/Misc/Logos/MCR2_Logo_Black.png">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ManchesterRoboticsLtd/MR3001_Design_and_Development_of_Robots_II/blob/main/Misc/Logos/MCR2_Logo_White.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/ManchesterRoboticsLtd/MR3001_Design_and_Development_of_Robots_II/blob/main/Misc/Logos/MCR2_Logo_Black.png">
   <img alt="Shows MCR2 logo in black or white." width="150" align="right">
 </picture>
 
 ---
-# MR3001B Design and Development of Robots I
+# MR3001B Design and Development of Robots II
 
   ## Introduction
-* The objective of this course, created by Manchester Robotics Ltd. (MCR2), is to equip students with the skills needed to operate mobile robots in different environments.
+* This course, created by Manchester Robotics Ltd. (MCR2), aims to equip students with the required skills to understand manipulator dynamics and control to solve challenges in cyber-physical systems.
 
-* This course is divided into two sections, carefully designed for the user to learn about the different aspects of ROS, from topics and messages to control and simulation of a real robot. These sections will span throughout a five-week period, with two lessons per week.
+* This course is divided into five sections, carefully designed for the user to learn about the different aspects of manipulators, from trajectory tracking and dynamic modelling to control and simulation of a real robot.
 
-* The first part of this course introduces the basic concepts and general knowledge of the ROS environment to the user.
-The second part of the course is dedicated to the analysis, control, and simulation of mobile robots in different environments. 
+  * The first part of this course introduces the basic concepts and general knowledge of dynamical systems.
+  * The second part of the course is dedicated to trajectory design and analysis. 
+  * The third section is dedicated to the dynamic modelling and simulation of manipulators.
+  * The fourth section focuses on basic joint control for manipulators.
+  * Finally, the last section is dedicated to the advanced control of manipulators.
 
 * This course will be based on challenges to make the student aware of the problems faced while implementing advanced intelligent algorithms in robotics.
+
    
 ## General Information
 * MCR2 Person in Charge: Dr Alexandru Stancu and Dr Mario Martinez
 * Tecnológico de Monterrey Person in Charge: Dr.  Consuelo Rodríguez Padilla and Dr. Carlos Vazquez
 * Duration: 5 Weeks
 *	Student counselling: Via appointment.
-*	Classes: 10 sessions, 1 group.
-    *	Group 1: Tuesday, Wednesday and Friday, 9- 11 AM (Central Mexico Time)
-* Start Date: 12 Febraury 2023
+*	Classes: 5 sessions, 1 group.
+    *	Group 1: Wednesday 3-6 PM (Central Mexico Time)
+* Start Date: Monday, 1 April 2023
 
 ## Live Sessions (Recordings)
   * TBD
@@ -46,37 +50,23 @@ General requirements. Please be aware that a set of requirements specific to eac
 
 ## Weekly Sessions
 
-### Week 1: ROS Introduction
-  This session will introduce the teaching team and the basics of ROS.
+### Week 1: Dynamical systems - Fundamentals
+  This session will introduce the teaching team and the basics of dynamical systems.
 
-#### Session 1:
+#### Session:
  * Who are we? 
  * Introduction to robotics.
- * Introduction to VM/Ubuntu
-
-#### Session 2:
-  *	Introduction to ROS
-  *	Overview of ROS Environment
-    *	Topics, Messages
-
- #### Session 3:
-  *	Introduction to ROS
-  *	Overview of ROS Environment
-    *	Topics, Messages
-
+ * Introduction to dynamical systems
 
   #### Activities
 
-   * ##### Activity 1: Talker and Listener
-     Generate a node that sends a message to another node to listen to it.
-
-   * ##### Activity 2: Launch Files
-     Create a Launch file for the nodes created.
+   * ##### Activity 1: Exercises
+     Make the exercises in the PPT.
 
   #### Mini-Challenges
 
-  * ##### Mini-Challenge 1: ROS Nodes
-    Generate a node that sends a signal to another node to process it.
+  * ##### Mini-Challenge 1: Dynamical simulation
+    Simulate a dynamical system (pendulum) using ROS.
   
   **Requirements:** 
  * Computer with access to Zoom
@@ -85,189 +75,86 @@ General requirements. Please be aware that a set of requirements specific to eac
  * If Ubuntu 20.04 cannot be installed, MCR2 offers a Virtual Machine with ROS preinstalled (installation instructions in Week 1 Folder).
 
 
-### Week 2: ROS Practicalities
-  This week, we will be delivering a comprehensive introduction to some of the most practical and relevant features of the Robot Operating System (ROS). 
+### Week 2: Trajectory tracking
+  This week, the concepts of trajectory planning, boundary conditions and path planning will be covered. 
 
-#### Session 1:
- * Solution of Mini-challenge 1.
- * ROS Namespaces
- * ROS Parameter Server
-
-#### Session 2:
-  *	RVIZ Introduction
-  * Transformations
-
- #### Session 3:
-  *	RVIZ Introduction
-  * Transformations
+#### Session:
+ * Path planning.
+ * Boundary Condition.
+ * Trajectory planning.
 
   #### Activities
 
-   * ##### Activity 1: Namespaces
-     Use namespaces to create two node groups
-
-   * ##### Activity 2: Parameters
-     Parametrise previous nodes.
-
-   * ##### Activity 3: Parameter Files
-     Use parameter files to parametrise previous nodes.
-
-   * ##### Activity 4: Marker
-     Create a simple marker in RVIZ.
-
-   * ##### Activity 5.1: Static Transform
-     Create a static transform for RVIZ
-
-   * ##### Activity 5.2: TF activity
-     Create dynamic transforms in RVIZ.
-
-   * ##### Activity 6: Planets
-     Create multiple movable markers in RVIZ.
-
-   * ##### Activity 7: TF Listener
-     Listen to a transform in RVIZ.
-
+   * ##### Activity 1: Trajectory definition
+     Make a simple trajectory using MATLAB and simulate it using ROS
 
   #### Mini-Challenges
 
-  * ##### Mini-Challenge 2: Mobile robot
-    Show a simple mobile robot in RVIZ using markers and TF.  
+  * ##### Mini-Challenge 2: ROS Trajectory
+    Simulate the trajecotry in ROS.  
   
   **Requirements:** 
     Requirements of Session 1.
 
 
-### Week 3: URDF Files
-This week, we will introduce the concept of URDF files in the context of Robot Operating System (ROS). This will involve an in-depth exploration of these files' underlying architecture and functionality, focusing on their role in facilitating the creation and deployment of robotic systems.
+### Week 3: Robot dynamics
+This week will introduce the concepts of dynamical modelling and control of a nonlinear system.
 
-#### Session 1:
- * Solution of Mini-challenge 2.
- * URDF Introduction
- * Joints
- * Robot State Publisher
- * Joint State Publisher
-
-
-#### Session 2:
-  * Joint State publisher
-  * Links
-
-
- #### Session 3:
-  *	Joint State publisher
-  * Links
-
+#### Session:
+ * Single link manipulator (SLM) state space modelling using Euler-Lagrange.
+ * Single link manipulator control
+ * Simulation.
 
   #### Activities
 
-   * ##### Activity 1: Simple URDF file.
-     Create a simple URDF.
-
-   * ##### Activity 2.1: Create a movable joint.
-     Create a simple movable joint
-
-   * ##### Activity 2.2: Create a prismatic joint.
-     Create a simple prismatic joint.
-
-   * ##### Activity 2.3: Create a revolute joint.
-     Create a simple revolute joint.
-
-   * ##### Activity 3.1: Making a Joint State Publisher.
-     Create a simple joint stat publisher.
-
-   * ##### Activity 3.2: Making a Joint State Publisher for a prismatic joint.
-     Create a simple joint state publisher for a prismatic joint.
-
-   * ##### Activity 3.3: Making a Joint State Publisher for a revolute joint.
-     Create a simple joint state publisher for a revolute joint.
-
-   * ##### Activity 4.1: Making a pneumatic cylinder model.
-     Make a simple pneumatic cylinder
-
-   * ##### Activity 4.2: Making a servo motor model.
-     Make a simple servo motor model.
-
+   * ##### Activity 1: SLM Modelling (SLM).
+     Simulation of a SLM.
 
   #### Mini-Challenges
 
-  * ##### Mini-Challenge 3: DC Motor
-    Show a DC motor dynamical behaviour using a first-order system node in RVIZ.  
+  * ##### Mini-Challenge: Control of a SLM
+    Joint Control of a SLM.  
   
   **Requirements:** 
     Requirements of Session 1.
 
 
-### Week 4: Mobile Robots Simulation.
-This week's curriculum will encompass the core concepts of mobile robots and simulation.
+### Week 4: Dual Link Manipulator.
+This week, we will model a dual-link manipulator in state space using Euler-LaGrange and control it using a joint PID controller.
 
-#### Session 1:
- * Solution of Mini-challenge 3.
- * Simulation and Modelling Basics.
- * Dynamical Systems
-
-
-#### Session 2:
-  * Dynamical Systems
-  * Differential Drive Basics.
-
-
- #### Session 3:
-  * Differential Drive Basics.
-  * Kinematic Model of a DDR.
-  * Gazebo simulation of a DDR.
-
-
+#### Session:
+ * DLM modelling.
+ * Joint Control.
 
   #### Activities
 
-   * ##### Activity 1: Motor Simulation.
-     Simulate the dynamics of a Motor.
+   * ##### Activity 1: Data Acquisition.
+     DLM manipulator (ROS modelling).
 
 
   #### Mini-Challenges
 
-  * ##### Mini-Challenge 4: DDR Kinematic Simulator
-    Develop a node to perform a kinematic simulation of a DDR.  
+  * ##### Mini-Challenge: Joint Control of a DLM
+    Joint control of a DLM.  
   
   **Requirements:** 
     Requirements of Session 1.
 
 
-### Week 5: Open Loop/Closed Loop Control.
-This week will introduce some basics of open-loop and closed-loop control for mobile robotics.
+### Week 5: Advanced control for manipulators.
+This week, an implementation feedback linearisation controller will be used.
 
-#### Session 1:
- * Open loop control theory.
- * Differential Drive Robot Open-Loop Control.
-
-
-#### Session 2:
-  * Open loop control theory.
-  * Differential Drive Robot Open-Loop Control.
-  * Closed loop control theory.
-
-
- #### Session 3:
-  * Closed loop control theory.
-  * Differential Drive Robot Closed-Loop Control for path following.
-  * Presentation of the Final Challenge
-
+#### Session:
+ * CTC Control.
+ * Feedback linearisation control.
 
   #### Activities
 
-   * ##### Activity 1: Teleoperation of a mobile robot.
-     Simple DDR control.
+   * ##### Activity 1: DLM Manipulator control (PID).
+     DLM manipulator control.
 
-   * ##### Activity 2: Open Loop control for a DDR.
-     Open Loop Path following of a real Mobile Robot
-
-   * ##### Activity 3: Teleoperation of a mobile robot.
-     Simple closed-loop control
-
-  #### Mini-Challenges
-
-  * ##### Mini-Challenge 5: Closed loop control of a mobile robot
-    Closed Loop control for Path following a Mobile Robot.  
+  #### Final-Challenges
+      Joint Control of a DLM using Feedback linearisation.
   
   **Requirements:** 
     Requirements of Session 1.
