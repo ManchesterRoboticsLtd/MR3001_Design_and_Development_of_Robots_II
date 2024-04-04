@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<robot name="dc_motor">
+
+<link name="world">
+</link>
+
+<link name="Motor">
+</link>
+
+<link name="Wheel">
+</link>
+
+<joint name="joint1" type="fixed">
+</joint>
+
+<joint name="joint2" type="continuous">
+</joint>
+
+</robot>
