@@ -12,6 +12,8 @@
 
 ---
 
+
+
 # Week 1: Mini challenge
 
 * In this folder, the student will find the neccessary files for Mini challenge 1.
