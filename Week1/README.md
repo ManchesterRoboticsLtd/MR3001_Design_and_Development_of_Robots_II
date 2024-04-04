@@ -10,6 +10,8 @@
   <img alt="Shows MCR2 logo in black or white." width="150" align="right">
 </picture>
 
+<br>
+
 ---
 # MR3001C Design and Development of Robots II
 
