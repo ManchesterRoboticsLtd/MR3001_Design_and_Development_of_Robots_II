@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!--Load mesh model -->
+    <arg name="urdf_model" value="$(find slm_sim)/urdf/pendulum.urdf"/>
+    <param name="robot_description" command="cat $(arg urdf_model)" />
+
+    <!--Robot State Publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="slm_state_pub" >
+    </node>
+
+    <!--Joint State Publisher --> <!--Uncomment for TESTING ONLY (COMMENT YOUR JOINT STATE PUBLISHER)-->    
+    <!--<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    </node>-->
+
+    <arg name="rvizconfig" default="$(find slm_sim)/rviz/manipulator.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" /> 
+
+
+</launch>
