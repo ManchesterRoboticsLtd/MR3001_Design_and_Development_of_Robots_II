@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!--Load mesh model -->
+    <arg name="urdf_model" value="$(find simple_manipulator)/urdf/manipulator.urdf"/>
+    <param name="robot_description" command="cat $(arg urdf_model)" />
+
+
+    <!--Robot State Publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="manipulator_state_pub" >
+    </node>
+
+    <node pkg="simple_manipulator" type="manipulator_dyn_sim.py" name="manipulator_joint_pub" >
+    </node>
+        
+    <!--Robot State Publisher --> <!--Uncomment-->    
+    <!--<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    </node>-->
+
+    <arg name="rvizconfig" default="$(find simple_manipulator)/rviz/manipulator.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" /> 
+
+</launch>
