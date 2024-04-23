@@ -39,8 +39,8 @@
 * Start Date: Monday, 1 April 2023
 
 ## Live Sessions (Recordings)
-  * TBD
-     
+  * [Recordings](https://manchesterrobotics-my.sharepoint.com/:f:/g/personal/mario_mtz_manchester-robotics_com/Ekw7jy5a3vRGiRLKqjT9BmoB_d3xlu9ZiHNGFbdvpnFHhw?e=ezYegZ)
+      
 ## General Requirements
 General requirements. Please be aware that a set of requirements specific to each session will be shown in each session subsection (Some items may be repeated).
 * Computer with access to Zoom (online classes).
