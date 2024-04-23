@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!--Generator Parameters-->
+    <arg name="amplitude" default="1.0"/>
+    <arg name="frequency"  default="0.05"/>
+
+    <!--Simulation Parameters-->
+    <arg name="node_rate"  default="150"/>
+    
+    <!--Initialise kinematic_model -->
+    <node pkg="controller_simple" type="setpoint_gen.py" name="set_point_gen" output="screen">
+        <param name="setPoint_node_rate" value="$(arg node_rate)"/>
+        <param name="setPoint_amplitude" value="$(arg amplitude)"/>
+        <param name="setPoint_freq" value="$(arg frequency)"/>     
+    </node>
+
+</launch>
