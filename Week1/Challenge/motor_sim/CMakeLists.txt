@@ -165,7 +165,7 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
  catkin_install_python(PROGRAMS
-   scripts/motor_sim.py scripts/motor_JointPub.py scripts/pid_control.py scripts/set_point_generator.py 
+   scripts/motor_sim.py scripts/motor_JointPub.py scripts/set_point_generator.py scripts/motor_sim.py 
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

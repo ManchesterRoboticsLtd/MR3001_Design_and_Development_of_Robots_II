@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<launch>
+    <!--Control CTC Parameters-->
+    <arg name="ctc_Kd" default="40.0"/>
+    <arg name="ctc_Kp" default="400.0"/>
+
+    <!--Control PID Parameters (Uncomment)-->
+    <arg name="set_point" default="0.5"/>
+    <arg name="pid_Kp" default="12.0"/>
+    <arg name="pid_Ki" default="20.0"/>
+    <arg name="pid_Kd" default="2.4"/>
+
+    <!--SLM Simulation Parameters-->
+    <arg name="ctrl_sample_time" default="0.001"/>
+    <arg name="ctrl_node_rate"  default="1000"/>
+
+    <!--Pendulum Parameters-->
+    <arg name="friction_coeficient" default="0.10"/>
+    <arg name="rod_mass"  default="3.0"/>
+    <arg name="rod_length"  default="0.4"/>
+    <arg name="gravity"  default="9.8"/>
+
+    <!--SLM Simulation Parameters-->
+    <arg name="sample_time" default="0.01"/>
+    <arg name="node_rate"  default="200"/>
+
+    <!--Load mesh model -->
+    <arg name="urdf_model" value="$(find slm_sim)/urdf/pendulum.urdf"/>
+    <param name="robot_description" command="cat $(arg urdf_model)" />
+
+    <!--Robot State Publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="slm_state_pub" >
+    </node>
+
+    <!--Robot State Publisher --> <!--Uncomment-->    
+    <!--<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    </node>-->
+
+    <arg name="rvizconfig" default="$(find slm_sim)/rviz/manipulator.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" /> 
+
+    <node pkg="slm_sim" type="slm_sim.py" name="slm_sim" output="screen">
+        <param name="friction_coeficient" value="$(arg friction_coeficient)"/>
+        <param name="rod_mass" value="$(arg rod_mass)"/>
+        <param name="rod_length" value="$(arg rod_length)"/>
+        <param name="gravity" value="$(arg gravity)"/>
+        <param name="node_rate" value="$(arg node_rate)"/>
+        <param name="sample_time" value="$(arg sample_time)"/>
+    </node>
+
+    <!--<node pkg="slm_sim" type="ctc_ctrl.py" name="slm_ctrl" output="screen">
+        <param name="rod_mass" value="$(arg rod_mass)"/>
+        <param name="rod_length" value="$(arg rod_length)"/>
+        <param name="gravity" value="$(arg gravity)"/>
+        <param name="node_rate" value="$(arg ctrl_node_rate)"/>
+        <param name="sample_time" value="$(arg ctrl_sample_time)"/>
+        <param name="Kd" value="$(arg ctc_Kd)"/>
+        <param name="Kp" value="$(arg ctc_Kp)"/>
+    </node> -->
+
+    <node pkg="slm_sim" type="pid_ctrl.py" name="slm_ctrl" output="screen">
+        <param name="node_rate" value="$(arg ctrl_node_rate)"/>
+        <param name="sample_time" value="$(arg ctrl_sample_time)"/>
+        <param name="Kp" value="$(arg pid_Kp)"/>
+        <param name="Ki" value="$(arg pid_Ki)"/>
+        <param name="Kd" value="$(arg pid_Kd)"/>
+        <param name="setPoint" value="$(arg set_point)"/>
+    </node>
+
+</launch>

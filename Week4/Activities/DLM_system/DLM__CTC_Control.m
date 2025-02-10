@@ -23,10 +23,9 @@ Kd1 = 20;
 Kd2 = 20;
 
 % Simulation Parameters
-
 % Initial Conditions
-x_1_0 = pi/2;
-x_2_0 = pi;
+x_1_0 = 0;
+x_2_0 = 0;
 x_dot_1_0 = 0;
 x_dot_2_0 = 0;
 
@@ -35,13 +34,11 @@ u_2_0 = 0;
 
 % Initial/Final time (s)
 t0=0.0;
-tf=10;
+tf=5;
 
 % Sampling time
 dt=0.00001;
 t=t0:dt:tf;
-
-
 
 %% NonLinear system Matrix Definition
 syms q_1 q_2 q_dot_1 q_dot_2 q_ddot_1 q_ddot_2  tau_1 tau_2
@@ -69,6 +66,8 @@ q_ddot = simplify([q_dot; (M^-1)*(Tau - C*q_dot - G)]);
 % Vector initialisation
 X = zeros(4,length(t));
 r = zeros(6,length(t));
+tau = zeros(2,length(t));
+error_plot = zeros(2,length(t));
 U = zeros(2,length(t));
 
 % Set initial conditions
@@ -117,8 +116,12 @@ for k=1:length(t)-1
     q_dot_dot_star = [r1_dot_dot;r2_dot_dot];
 
     Tau = M(q_2)*(q_dot_dot_star-U) + C(q_2,q_dot_1,q_dot_2)*X([3,4],k) + G(q_1,q_2); 
+    
+
     X(:,k+1) = X(:,k) + dt*[X([3,4],k);((M(q_2))^-1)*(Tau - C(q_2,q_dot_1,q_dot_2)*X([3,4],k) - G(q_1,q_2))];
     
+    error_plot(:,k)=error;
+    tau(:,k)=Tau;
 
 end
 
@@ -132,3 +135,19 @@ plot(t,r(1,:),'LineWidth',1)
 plot(t,r(4,:),'LineWidth',1)
 plot(t,X(1,:),'LineWidth',2,'color','g')
 plot(t,X(2,:),'LineWidth',2,'color','y')
+
+fig2 = figure('Name','Error');
+grid on;
+hold on;
+axis([0, 10, -1, 2])
+
+plot(t,error_plot(1,:),'LineWidth',1)
+plot(t,error_plot(2,:),'LineWidth',1)
+
+fig3 = figure('Name','Tau');
+grid on;
+hold on;
+axis([0, 10, -1, 2])
+
+plot(t,tau(1,:),'LineWidth',1)
+plot(t,tau(2,:),'LineWidth',1)

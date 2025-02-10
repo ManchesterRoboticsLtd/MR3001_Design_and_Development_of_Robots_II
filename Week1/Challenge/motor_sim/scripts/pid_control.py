@@ -1,34 +1,63 @@
 #!/usr/bin/env python
-
 import rospy
-#Declare libraries to be used (if needed)
-#Declare Messages to be used
+import numpy as np
+from std_msgs.msg import Float32
 
 
-#Declare Variables/Parameters to be used
+#Declare Variables to be used
+first = True
+start_time = 0.0 
+last_time = 0.0
+current_time = 0.0
 
-#Define callback functions (if required)
+#Initialise message to be published
 
-#Define other functions (if required)
+#Initialise messages for the subscribers
+
+#Define callback functions
+
+#Stop Condition
+def stop():
+ #Setup the stop message (can be the same as the control message)
+  print("Stopping")
 
 
 if __name__=='__main__':
     #Initialise and Setup node
     rospy.init_node("Control")
-    rate = rospy.Rate(10)
+    rate = rospy.Rate(100)
+    rospy.on_shutdown(stop)
 
-    #Declare other functions if required
+    #Declare Parameters to be used
+    sample_time = 0.01
 
     #Setup Publishers and Subscribers
 
-    #Run the node
-    try:
-        while not rospy.is_shutdown():
-            
-            ######## Write your node here ##############
+    
+    print("The Controller is Running")
 
-            #Wait and repeat
-            rate.sleep()
-            
-    except rospy.ROSInterruptException:
-        pass    
+    #Run the node
+    while not rospy.is_shutdown():
+        
+        #Setup the variables (run only one time)
+        if first == True:
+            start_time = rospy.get_time() 
+            last_time = rospy.get_time()
+            current_time = rospy.get_time()
+            first = False
+
+        #Controller
+        else:
+            current_time = rospy.get_time()
+            dt = current_time - last_time       #Get the sampling time
+
+            #Get the control output, using the motor angular speed and set point
+            if dt >= sample_time:
+         
+               ############ WRITE YOUR CONTROLLER HERE  #########################
+
+                #Get Previous time          
+                last_time = rospy.get_time()
+
+        #Wait and repeat
+        rate.sleep()

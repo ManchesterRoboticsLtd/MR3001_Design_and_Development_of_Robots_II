@@ -1,35 +1,26 @@
 #!/usr/bin/env python
-
 import rospy
+import numpy as np
+from std_msgs.msg import Float32
 
-#Declare libraries to be used
-
-#Declare Messages to be used
-
-#Declare Variables/Parameters to be used
-
-#Define callback functions (if required)
-
-#Define other functions (if required)
 
 if __name__=='__main__':
     #Initialise and Setup node
     rospy.init_node("SetPoint_Generator")
 
+    #Declare Variables/Parameters to be used
+ 
     # Configure the Node
-    rate = rospy.Rate(10)
-
-    #Declare other functions if required
+    rate = rospy.Rate(200)
 
     #Setup Publishers and Subscribers
     
-    try:
-        while not rospy.is_shutdown():
-            
-            ######## Write your node here ##############
+    #Declare initial time
+    init_time = rospy.get_time()
 
-            rate.sleep()
+    while not rospy.is_shutdown():
 
-     
-    except rospy.ROSInterruptException:
-        pass
+        ####SIGNAL GENERATOR CODE HERE ###   
+
+        #Wait and repeat
+        rate.sleep()

@@ -13,8 +13,10 @@
     <!--<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
     </node>-->
 
-    <arg name="rvizconfig" default="$(find slm_sim)/rviz/manipulator.rviz" />
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" /> 
+    <node name="rviz" pkg="rviz" type="rviz" required="true" /> 
 
+    <node pkg="slm_sim" type="slm_sim.py" name="slm_sim" output="screen">
+    <!--PARAMETERS IF NEEDED-->
+    </node>
 
 </launch>
