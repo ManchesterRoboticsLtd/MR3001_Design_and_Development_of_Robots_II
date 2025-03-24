@@ -39,7 +39,7 @@
 * Start Date: Monday, 1 April 2023
 
 ## Live Sessions (Recordings)
-  * [Recordings](https://manchesterrobotics-my.sharepoint.com/:f:/g/personal/mario_mtz_manchester-robotics_com/El27Vzb9-B5BmXKEZjrMGqUBlc3rvf4ac2Y6_IZzZramug?e=OAvT5t)
+  * [Recordings]()
       
 ## General Requirements
 General requirements. Please be aware that a set of requirements specific to each session will be shown in each session subsection (Some items may be repeated).
