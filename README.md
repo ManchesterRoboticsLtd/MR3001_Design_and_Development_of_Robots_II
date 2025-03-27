@@ -39,7 +39,7 @@
 * Start Date: Monday, 1 April 2023
 
 ## Live Sessions (Recordings)
-  * [Recordings]()
+  * [Recordings](https://tecmx-my.sharepoint.com/:f:/g/personal/mario_mtz_tec_mx/ElZaZkkkXjlBsNHprF3G4gEBpLC2Gx4eMmOEfgsSLFehiQ?e=V6X5wf)
       
 ## General Requirements
 General requirements. Please be aware that a set of requirements specific to each session will be shown in each session subsection (Some items may be repeated).
