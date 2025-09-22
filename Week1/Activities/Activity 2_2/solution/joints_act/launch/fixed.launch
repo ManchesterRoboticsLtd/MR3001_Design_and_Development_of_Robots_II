@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="fixed_joint_test" default="$(find joints_act)/urdf/fixed_ex.urdf"/>
+    <param name="robot_description" command="cat $(arg fixed_joint_test)" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="link_ex_pub" >
+    </node>
+
+<node name="rviz" pkg="rviz" type="rviz" required="true" />
+</launch>

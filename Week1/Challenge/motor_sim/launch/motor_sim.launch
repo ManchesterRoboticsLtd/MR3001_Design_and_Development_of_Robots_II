@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Load URDF-->
+    <arg name="motor_urdf" default="$(find motor_sim)/urdf/dc_motor.urdf"/>
+
+    <!--Set URDF file as a robot_description parameter-->
+    <param name="robot_description" command="cat $(arg motor_urdf)" />
+
+    <!--Initialise robot_state_publisher-->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="motor_urdf_pub" >
+    </node>
+
+    <!--Initialise motor dynamical simulation-->
+    <node pkg="motor_sim" type="motor_sim.py" name="motor_Sim" >
+        <!--PARAMETERS IF APPLICABLE-->
+    </node>
+
+    <!--Initialise motor input  (Uncomment) -->
+    <node pkg="motor_sim" type="set_point_generator.py" name="motor_SetPoint" >
+        <!--PARAMETERS IF APPLICABLE-->
+    </node>
+
+    <!--Initialise motor input  (Uncomment) -->
+    <node pkg="motor_sim" type="pid_control.py" name="motor_Ctrl" >
+        <!--PARAMETERS IF APPLICABLE-->
+    </node>
+
+    <!--Initialise motor joint publisher-->
+    <node pkg="motor_sim" type="motor_JointPub.py" name="motor_JointPub" >
+            <!--PARAMETERS IF APPLICABLE-->
+    </node>
+    
+    <!--Initialise RVIZ Visualiser -->
+    <node name="rviz" pkg="rviz" type="rviz" required="true" />
+
+    <!--Initialise rqt_plot Visualiser -->
+    <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" output="screen"  args="/motor_input /motor_output /set_point"/>
+
+
+</launch>

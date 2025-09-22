@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="continuos_ex" default="$(find joints_act)/urdf/continuos_ex.urdf"/>
+    <param name="robot_description" command="cat $(arg continuos_ex)" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="continuos_test_pub" >
+    </node>
+
+ <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    </node>
+
+<node name="rviz" pkg="rviz" type="rviz" required="true" />
+
+</launch>
+

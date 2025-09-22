@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="cylinder_test" default="$(find links_act)/urdf/cylinder.urdf"/>
+    <param name="robot_description" command="cat $(arg cylinder_test)" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="cylinder_test_pub" >
+    </node>
+
+    <!-- Uncomment the Joint state publisher if not using a node to publish joint states. If uncommented, comment any node publishing joint states-->
+    
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    </node>
+
+    <!--<node pkg="links_act" type="cylinder_joint.py" name="cylinder_joint_pub" />-->
+
+
+    <arg name="rvizconfig" default="$(find links_act)/rviz/links_ex1.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" /> 
+
+</launch>
